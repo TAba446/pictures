@@ -173,14 +173,22 @@
       <img src="search.gif" alt="جست‌وجو" />
     </div>
 
-    <!-- کارت‌ها -->
-    <div class="grid-container"></div>
+   <!-- کارت‌ها -->
+<div class="grid-container" id="cards-container">
+  <!-- اینجا کارت‌ها به صورت داینامیک لود میشن -->
+</div>
   </main>
 
   <!-- فوتر -->
   <footer>
     طراح وب‌سایت: مهندس طاها سرگزی
   </footer>
-<script src="cards.js"></script>
+<script>
+  fetch('cards.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('cards-container').innerHTML = data;
+    });
+</script>
 </body>
 </html>
